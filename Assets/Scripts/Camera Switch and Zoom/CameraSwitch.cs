@@ -7,6 +7,9 @@ public class CameraSwitch : MonoBehaviour
     [SerializeField]
     private List<GameObject> _vCams = new List<GameObject>();
 
+    [SerializeField]
+    private int _currentCamIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +21,19 @@ public class CameraSwitch : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            for (int i = 0; i < _vCams.Count - 1; i++)
+            _currentCamIndex++;
+            if (_currentCamIndex > _vCams.Count - 1)
+                _currentCamIndex = 0;
+            foreach(var cam in _vCams)
             {
-                _vCams[i].SetActive(false);
+                cam.SetActive(false);
             }
+            _vCams[_currentCamIndex].SetActive(true);
+
+            //for (int i = 0; i < _vCams.Count - 1; i++)
+            //{
+            //    _vCams[i].SetActive(false);
+            //}
         }
     }
 }
