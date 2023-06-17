@@ -20,9 +20,9 @@ MonoBehaviour:
     Y:
       Frequency: 0.5
       Amplitude: 0.5
-      Constant: 0
+      Constant: 1
     Z:
-      Frequency: 1.5
-      Amplitude: 1
+      Frequency: 0.75
+      Amplitude: 0.75
       Constant: 0
   OrientationNoise: []
