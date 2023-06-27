@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
     {
         float _horizontal = Input.GetAxis("Horizontal");
         float _vertical = Input.GetAxis("Vertical");
-        _direction = new Vector3(0, 0, _vertical);
+        _direction = new Vector3(_horizontal, 0, 0);
         _direction *= _moveSpeed * Time.deltaTime;
         _controller.Move(_direction);
 
