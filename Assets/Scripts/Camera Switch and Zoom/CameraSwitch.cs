@@ -9,10 +9,9 @@ public class CameraSwitch : MonoBehaviour
 
     private int _currentCamIndex = 0;
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.C))
         {
             _currentCamIndex++;
             if (_currentCamIndex > _vCams.Count - 1)
@@ -23,6 +22,14 @@ public class CameraSwitch : MonoBehaviour
                 cam.SetActive(false);
             }
             _vCams[_currentCamIndex].SetActive(true);
+        }
+    }
+
+    public void ToggleCameras(bool areCamerasOn)
+    {
+        foreach (var cam  in _vCams)
+        {
+            cam.SetActive(areCamerasOn);
         }
     }
 }
