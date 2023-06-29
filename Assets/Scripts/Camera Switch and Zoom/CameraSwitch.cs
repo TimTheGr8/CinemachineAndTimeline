@@ -11,7 +11,7 @@ public class CameraSwitch : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(KeyCode.R))
         {
             _currentCamIndex++;
             if (_currentCamIndex > _vCams.Count - 1)
@@ -22,14 +22,6 @@ public class CameraSwitch : MonoBehaviour
                 cam.SetActive(false);
             }
             _vCams[_currentCamIndex].SetActive(true);
-        }
-    }
-
-    public void ToggleCameras(bool areCamerasOn)
-    {
-        foreach (var cam  in _vCams)
-        {
-            cam.SetActive(areCamerasOn);
         }
     }
 }
